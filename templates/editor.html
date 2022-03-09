@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% include "nav2.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editor</title>
+</head>
+<style>
+    body{
+        background-color: blueviolet;
+    }
+    .editor{
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+    color: black;
+    }
+    h1{
+        text-align: center;
+        font-size:250%;
+    }
+</style>
+<body>
+    <h1>Type your text</h1>
+    <br><br>
+    <div class="editor">
+<form name="ckeditor" action="{% url 'editorsave' %}" method="Post"> 
+        {% csrf_token %}
+       
+        
+        
+        {{ form.media }}
+        {{ form.as_p}} 
+        <button type="submit" >Submit</button>
+    </form>
+</div>
+</body>
+</html>

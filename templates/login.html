@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% include "nav.html" %}
+<!-- {% load crispy_forms_tags %} -->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{%static 'css/login.css'%}"> -->
+
+<style>
+
+    
+body{
+    background-color:blueviolet;
+    text-align: center;
+}
+
+
+
+input[type=submit] {
+    background-color:darkcyan;
+    border: none;
+    color: rgb(15, 13, 13);
+    padding:10px 20px;
+
+    margin: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.margin{
+    margin-top:30px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+small{
+    color: black;
+}
+h4{
+    color:brown;
+}
+
+  
+</style>
+    <title>log in</title>
+</head>
+
+
+<body >
+
+    <div class="margin">
+        <form method='POST'>
+            {% csrf_token %}
+           
+           <div>{{ form}} </div>
+                 
+               <br>
+                
+        
+            
+            
+          <input type="submit" value="login">
+     
+        </form>
+       
+    </div>
+    <small>forgot password? <a  href="{% url 'password_reset' %}"><small style="text-decoration: underline;"> click here</small></a></small>
+    
+    <br><br>
+    <small>need an account <a  href="{% url 'register' %}"><small style="text-decoration: underline;"> sign up</small></a></small>
+<br>
+<br><br>
+<h4><a  href="{% url 'socialmedialog' %}">login with socialmedia</a></h4>
+</body>
+</html>
+
+<a href=""

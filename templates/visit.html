@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% include "nav.html" %}
+<!-- {% load static %}  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visit</title>
+</head>
+<style>
+    body{
+	background-image: linear-gradient( #0f0c29, #302b63, #24243e);
+       text-align: center; 
+	   background-position: 50px;
+    }
+	.destination{
+		margin-left: 190px;
+	}
+	.destination title{
+		color:brown;
+	}
+	.section_subtitle{
+		margin-left: 350px;
+		font-size: 400%;
+		color:blueviolet;
+		
+	}
+	.section_title{
+		text-emphasis-color: red;
+		font-size:150%
+		
+	}
+	h1{
+		color:red;
+	}
+	h2{
+		color:blueviolet;
+	}
+	h3{
+		text-decoration: none;
+		color:violet;
+		font-size:200%
+		
+	}
+ </style>
+<body>
+    <!-- Destinations -->
+
+		<div class="destinations" id="destinations">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_subtitle">simply amazing places!!</div>
+						<br><br>
+						<div class="section_title">
+							<h2>visit your favorite destination</h2>
+						</div>
+						<br>
+					</div>
+				</div>
+				<div class="row destinations_row">
+					<div class="col">
+						<div class="destinations_container item_grid">
+
+							{% for dest in dest %}
+							<!-- Destination -->
+							<div class="destination item">
+								<div class="destination_image">
+									<img src="{{dest.image.url}}" alt="images" width="800" height="400">
+
+									{% if dest.offer %}
+									<div class="spec_offer text-center"><h1>Special Offer!!</h1></div>
+									{% endif %}
+								</div>
+								<div class="destination_content">
+									<div class="destination_title"><a href="destinations.html"><h3>{{dest.name}}</h3></a></div>
+									<br>
+									<div class="destination_subtitle">
+										<p>{{dest.description}}</p>
+									</div>
+									<div class="destination_price">From ${{dest.price}}</div>
+								</div>
+							</div>
+                            <br><br>
+							{% endfor %}
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

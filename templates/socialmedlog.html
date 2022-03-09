@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% include "nav.html" %}
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/sociallog.css'%}">
+    <title>login</title>
+</head>
+<body>
+    <div class="container">
+        
+            <h2 style="text-align:center">Login with Social Media </h2>
+            
+      
+            <div class="col">
+              <a href="{% url 'social:begin' 'facebook' %}" class="fb btn">
+                <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+              </a>
+              
+              <a href="{% url 'social:begin' 'google-oauth2' %}"class="google btn">
+                <i class="fa fa-google fa-fw"></i> Login with Google+
+              </a>
+            </div>
+</body>
+</html>
